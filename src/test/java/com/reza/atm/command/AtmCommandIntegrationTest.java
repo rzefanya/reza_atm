@@ -12,7 +12,7 @@ import org.springframework.shell.Shell;
 public class AtmCommandIntegrationTest {
 	@Autowired
 	private Shell shell;
-
+	
 	@Test
 	public void integrationTest() {
 		Object result = null;

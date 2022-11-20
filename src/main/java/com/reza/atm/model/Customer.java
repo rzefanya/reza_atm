@@ -23,15 +23,12 @@ public class Customer {
 	private int id;
 	private String name;
 
-	@ToString.Exclude
 	@OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
 	private Balance balance;
 
-	@ToString.Exclude
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer", cascade = CascadeType.ALL)
 	private List<Debt> debts;
 
-	@ToString.Exclude
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "target", cascade = CascadeType.ALL)
 	private List<Debt> credits;
 }

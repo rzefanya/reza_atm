@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.ToString;
 
@@ -18,10 +20,14 @@ public class Debt {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
+	@JsonIgnore
+	@ToString.Exclude
 	@ManyToOne
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 
+	@JsonIgnore
+	@ToString.Exclude
 	@ManyToOne
 	@JoinColumn(name = "target_id")
 	private Customer target;
